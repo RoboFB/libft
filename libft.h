@@ -6,11 +6,17 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:57 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/10 13:48:50 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/10 15:45:16 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT.H
+
+int	ft_isalpha(int c);
+
+#define LIBFT.H
+#endif
 
 
 
-int ft_isalpha(int c);
+
