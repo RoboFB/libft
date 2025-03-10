@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/10 15:02:16 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/10 15:28:54 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
 
 // #include <limits.h>
 // #include<stdio.h>
