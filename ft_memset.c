@@ -6,23 +6,23 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/10 19:14:13 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/10 20:37:02 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-// set c in b len times -> return void pointer to start of string
+// set c in b len times -> return void pointer to start of data
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*str;
+	unsigned char	*base;
 	size_t			idx;
 
-	str = (unsigned char *)b;
+	base = (unsigned char *)b;
 	idx = (size_t)0;
 	while (idx < len)
 	{
-		str[idx] = c;
+		base[idx] = c;
 		idx++;
 	}
 	return (b);
