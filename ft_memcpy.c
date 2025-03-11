@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/11 11:45:19 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/11 14:01:19 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // TODO: THINK OVER RESTRICT KEYWORD -> what if dest and sorce are the same pointer -> I don't care
 
-// set to NULL i len times -> return void pointer to start of string
+// copy scr to dst n bytes -> void * dst
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*dst_base;
@@ -65,3 +65,40 @@ int main(void)
 	printf("%ld\n",*(char*)ft_memcpy(&dest_3,&src_3,4));
 	return (0);
 } */
+
+
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+int main(void)
+{
+	char	dest[10];
+
+	strcpy(dest,"1234567");
+	memcpy(dest+1,dest+2,4);
+	printf("%s\n",dest);
+
+	strcpy(dest,"1234567");
+	memmove(dest+1,dest+2,4);
+	printf("%s\n",dest);
+
+	strcpy(dest,"1234567");
+	ft_memcpy(dest+1,dest+2,4);
+	printf("%s\n",dest);
+
+
+	strcpy(dest,"1234567");
+	memcpy(dest+2,dest+1,4);
+	printf("%s\n",dest);
+
+	strcpy(dest,"1234567");
+	memmove(dest+2,dest+1,4);
+	printf("%s\n",dest);
+	
+	strcpy(dest,"1234567");
+	ft_memcpy(dest+2,dest+1,4);
+	printf("%s\n",dest);
+
+
+	return (0);
+}
