@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/10 20:37:02 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/12 09:27:37 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t			idx;
 
 	base = (unsigned char *)b;
-	idx = (size_t)0;
+	idx = 0;
 	while (idx < len)
 	{
-		base[idx] = c;
+		base[idx] = (unsigned char)c;
 		idx++;
 	}
 	return (b);

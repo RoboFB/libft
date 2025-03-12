@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/11 14:01:19 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/11 14:39:07 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // TODO: THINK OVER RESTRICT KEYWORD -> what if dest and sorce are the same pointer -> I don't care
 
-// copy scr to dst n bytes -> void * dst
+// copy scr to dst n bytes not overlap -> void * dst
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*dst_base;
@@ -94,7 +94,7 @@ int main(void)
 	strcpy(dest,"1234567");
 	memmove(dest+2,dest+1,4);
 	printf("%s\n",dest);
-	
+
 	strcpy(dest,"1234567");
 	ft_memcpy(dest+2,dest+1,4);
 	printf("%s\n",dest);
