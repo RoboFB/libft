@@ -6,22 +6,20 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/10 16:57:38 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/13 15:15:08 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-// null terminated string -> return length of characters as size_t
+// null terminated! -> num of characters/ idx of '\0' == as size_t
 size_t	ft_strlen(const char *s)
 {
 	size_t	length;
 
 	length = 0;
 	while (s[length] != '\0')
-	{
 		length++;
-	}
 	return (length);
 }
 

@@ -6,31 +6,29 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/12 13:44:24 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/13 16:13:59 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "ft_strlen.c"
 
 // dstsize -> Full size of dst copys dsrsize -1 for Null
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t		idx_cpy;
-	size_t		src_len;
+	size_t		idx;
 
-	idx_cpy = 0;
-	src_len = 0;
-	if (dstsize == 0) // del?
-		return (0);
-	while (src[src_len] != '\0' && idx_cpy < dstsize - 1)
+	idx = 0;
+
+	while (src[idx] && dstsize > idx + 1)
 	{
-		dst[idx_cpy] = src[idx_cpy];
-		idx_cpy++;
+		dst[idx] = src[idx];
+		idx++;
 	}
-	dst[idx_cpy] = '\0';
-	while (src[src_len] != '\0')
-		src_len++;
-	return (src_len);
+	if (dstsize >= 1)
+		dst[idx] = '\0';
+
+	return (ft_strlen(src));
 }
 
 #include <string.h>
@@ -60,6 +58,5 @@ int main(void)
 	// strcpy(dest,"1234567");
 	// ft_memmove(dest+1,dest+1,4);
 	// printf("%s\n",dest);
-	printf("->%i\n", );
 	return (0);
 }
