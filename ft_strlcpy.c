@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/12 09:47:58 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/12 13:44:24 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	idx_cpy = 0;
 	src_len = 0;
-	if (dstsize == 0)
+	if (dstsize == 0) // del?
 		return (0);
 	while (src[src_len] != '\0' && idx_cpy < dstsize - 1)
 	{
