@@ -6,11 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 14:42:00 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:08:20 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isdigit.c"
+#include "libft.h"
 
 int ft_atoi(const char *nptr)
 {
@@ -30,7 +30,7 @@ int ft_atoi(const char *nptr)
 		negativ = -1;
 		positon++;
 	}
-	while (ft_isdigit(*positon))
+	while (*positon >= '0' && *positon <= '9')
 	{
 		num = num * 10 + (*positon - '0') * negativ;
 		positon++;

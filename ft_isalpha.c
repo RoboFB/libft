@@ -6,9 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/10 15:28:57 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:08:58 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 // A-Z or a-z -> return 1
 int	ft_isalpha(int c)

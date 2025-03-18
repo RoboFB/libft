@@ -6,11 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/12 09:27:37 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:09:32 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // set c in b len times -> return void pointer to start of data
 void	*ft_memset(void *b, int c, size_t len)

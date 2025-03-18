@@ -6,12 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/13 16:12:13 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:09:40 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include "ft_strlen.c"
+#include "libft.h"
 
 // dstsize > strlen(dst) + 1 -> max strlen(src)
 size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)

@@ -6,13 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/10 15:28:54 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:08:52 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// FIX LATER:
-#include"ft_isalpha.c"
-#include"ft_isdigit.c"
+#include "libft.h"
 
 // A-Z or a-z or '0'-'9' -> return 1
 int	ft_isalnum(int c)

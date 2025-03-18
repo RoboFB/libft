@@ -6,9 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/12 11:07:17 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:10:01 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 // A-Z -> a-z
 int	ft_tolower(int c)

@@ -6,11 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/13 14:13:42 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:09:51 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // 2 null terminate String -> compare
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

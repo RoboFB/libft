@@ -6,11 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/17 15:41:57 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:09:48 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // null terminated! -> num of characters/ idx of '\0' == as size_t
 size_t	ft_strlen(const char *s)

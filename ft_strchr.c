@@ -6,11 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/13 10:47:28 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:09:35 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // fist char c or not found = Null make sure that null terminatet
 char	*ft_strchr(const char *s, int c)

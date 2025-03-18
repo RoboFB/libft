@@ -6,11 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/11 14:39:07 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:09:26 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // TODO: THINK OVER RESTRICT KEYWORD -> what if dest and sorce are the same pointer -> I don't care
 
