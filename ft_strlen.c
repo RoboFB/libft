@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/17 13:39:40 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/17 15:41:57 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ size_t	ft_strlen(const char *s)
 		length++;
 	return (length);
 }
-lalaalalalal Timo war hier 
 
 /* #include <stdio.h>
 #include <string.h>
