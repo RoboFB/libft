@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:09:40 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:19:34 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,4 @@ size_t	ft_strlcat(char * dst, const char * src, size_t dstsize)
 }
 
 
-#include <stdio.h>
-#include <string.h>
 
-int	main(void)
-{
-	char test_1[10];
-	char test_2[10];
-	char test_3[10];
-
-	strlcpy(test_1,"123",4);
-	strlcpy(test_2,"123",4);
-	strlcpy(test_3,"4444",5);
-	printf("->%s,%s\n", test_1,test_2);
-
-	size_t res_og = strlcat(test_1,test_3,8);
-	size_t res_my = ft_strlcat(test_2,test_3,8);
-	if (res_og == res_my)
-		printf("OK_og:%s-my:%s,%lu,%lu\n", test_1, test_2,res_og,res_my);
-	else
-		printf("Error_og:%s-my:%s,%lu,%lu\n",  test_1, test_2,res_og,res_my);
-
-	
-	return (0);
-}

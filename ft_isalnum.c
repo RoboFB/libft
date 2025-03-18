@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:08:52 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:16:58 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,3 @@ int	ft_isalnum(int c)
 		return (0);
 }
 
-// #include <limits.h>
-// #include<stdio.h>
-// #include<ctype.h>
-// int	main(void)
-// {
-// 	printf("0->%d\n",ft_isalnum(-2345));
-// 	printf("0->%d\n",ft_isalnum(INT_MAX));
-// 	printf("0->%d\n",ft_isalnum('0'+256));
-// 	printf("1->%d\n",ft_isalnum('A'));
-// 	printf("1->%d\n",ft_isalnum('Z'));
-// 	printf("1->%d\n",ft_isalnum('a'));
-// 	printf("1->%d\n",ft_isalnum('z'));
-// 	printf("1->%d\n",ft_isalnum('0'));
-// 	printf("1->%d\n",ft_isalnum('9'));
-
-// 	printf("OG:\n");
-// 	printf("0->%d\n",isalnum(-2345));
-// 	printf("0->%d\n",isalnum(INT_MAX));
-// 	printf("0->%d\n",isalnum('0'+256));
-// 	printf("1->%d\n",isalnum('A'));
-// 	printf("1->%d\n",isalnum('Z'));
-// 	printf("1->%d\n",isalnum('a'));
-// 	printf("1->%d\n",isalnum('z'));
-// 	printf("1->%d\n",isalnum('0'));
-// 	printf("1->%d\n",isalnum('9'));
-
-// 	return (0);
-// }

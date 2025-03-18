@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:09:05 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:22:13 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,3 @@ int	ft_isdigit(int c)
 	else
 		return (0);
 }
-
-/* #include <limits.h>
-#include<stdio.h>
-#include<ctype.h>
-int main(void)
-{
-	printf("0->%d\n",ft_isdigit(-2345));
-	printf("0->%d\n",ft_isdigit(INT_MAX));
-	printf("0->%d\n",ft_isdigit('Z'));
-	printf("0->%d\n",ft_isdigit('0'+256));
-	printf("1->%d\n",ft_isdigit('9'));
-	printf("1->%d\n",ft_isdigit('0'));
-
-	printf("OG:\n");
-	printf("0->%d\n",isdigit(-2345));
-	printf("0->%d\n",isdigit(INT_MAX));
-	printf("0->%d\n",isdigit('Z'));
-	printf("0->%d\n",isdigit('0'+256));
-	printf("1->%d\n",isdigit('9'));
-	printf("1->%d\n",isdigit('0'));
-
-	return (0);
-} */

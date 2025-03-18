@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:57 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:05:49 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:14:45 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char		*ft_strnstr(const char *big, const char *little, size_t len);
 int 		ft_atoi(const char *nptr);
 
 void		*ft_calloc(size_t nelem, size_t elsize);
-char		*strdup(const char *s);
+char		*ft_strdup(const char *s);
 
 
 #define LIBFT.H

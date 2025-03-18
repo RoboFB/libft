@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:09:54 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:18:40 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-/* #include <string.h>
-#include <stdio.h>
-
-int main(void)
-{
-	char	big[10];
-	char	littel[10];
-
-
-	strcpy(big,"1234567");
-	strcpy(littel,"12");
-	char* my = ft_strnstr(big,littel,2);
-	char* og = strstr(big,littel);
-	printf("my:%sg:%p\n",my,og);
-
-
-
-	return (0);
-} */

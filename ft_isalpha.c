@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:08:58 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 15:17:31 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-
-/* #include <limits.h>
-#include<stdio.h>
-#include<ctype.h>
-int main(void)
-{
-	printf("0->%d\n",ft_isalpha(-2345));
-	printf("0->%d\n",ft_isalpha(INT_MAX));
-	printf("0->%d\n",ft_isalpha('0'));
-	printf("0->%d\n",ft_isalpha('a'+256));
-	printf("1->%d\n",ft_isalpha('H'));
-	printf("1->%d\n",ft_isalpha('A'));
-	printf("1->%d\n",ft_isalpha('Z'));
-	printf("1->%d\n",ft_isalpha('h'));
-	printf("1->%d\n",ft_isalpha('a'));
-	printf("1->%d\n",ft_isalpha('z'));
-
-	printf("OG:\n");
-	printf("0->%d\n",isalpha(-2345));
-	printf("0->%d\n",isalpha(INT_MAX));
-	printf("0->%d\n",isalpha('0'));
-	printf("0->%d\n",isalpha('a'+256));
-	printf("1->%d\n",isalpha('H'));
-	printf("1->%d\n",isalpha('A'));
-	printf("1->%d\n",isalpha('Z'));
-	printf("1->%d\n",isalpha('h'));
-	printf("1->%d\n",isalpha('a'));
-	printf("1->%d\n",isalpha('z'));
-
-	return (0);
-} */
