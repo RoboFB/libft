@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/19 15:58:08 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/19 21:50:39 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ int	test_ft_isprint(void)
 }
 
 
-// -----------------------
+// ---------------------------------------------------------------------
 
 
 
@@ -400,9 +400,7 @@ int	test_ft_strlcat(void)
 	return (0);
 }
 
-
-// -----------------------
-
+// ---------------------------------------------------------------------
 
 int	test_ft_toupper(void)
 {
@@ -620,7 +618,6 @@ int	test_ft_atoi(void)
 }
 
 
-
 int	test_ft_calloc(void)
 {
 	int pass;
@@ -657,8 +654,6 @@ int	test_ft_calloc(void)
 }
 
 
-
-
 int	test_ft_strdup(void)
 {
 	int pass;
@@ -685,6 +680,40 @@ int	test_ft_strdup(void)
 
 }
 
+// ---------------------------------------------------------------------
+
+int	test_ft_substr(void)
+{
+	char	*s;
+	s = ft_substr("abcde",2,3);
+
+	write(1,s,4);
+	free(s);
+	return (0);
+}
+
+int	test_ft_strjoin(void)
+{
+	char	*s;
+	s = ft_strjoin("123","456");
+
+	write(1,s,7);
+	free(s);
+	return (0);
+}
+
+int	test_ft_strtrim(void)
+{
+	char	*s;
+	s = ft_strtrim("123","456");
+
+	write(1,s,7);
+	free(s);
+	return (0);
+}
+
+
+// ---------------------------------------------------------------------
 
 int test_all(void)
 {
@@ -751,7 +780,12 @@ int	main(void)
 	
 	// add to all:
 	// test_ft_calloc();
-	test_ft_strdup();
+	// test_ft_strdup();
+
+
+	// test_ft_substr();
+	// test_ft_strjoin();
+	test_ft_strtrim();
 
 	return (0);
 }

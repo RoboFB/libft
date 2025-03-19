@@ -6,11 +6,12 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:57 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/19 16:46:44 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/19 17:50:48 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT
+#ifndef LIBFT_H
+#define LIBFT_H
 
 #include <stdlib.h>
 
@@ -56,5 +57,5 @@ void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
 
-#define LIBFT
+
 #endif
