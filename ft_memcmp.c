@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:09:21 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 16:21:01 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*val_1;
 	unsigned char	*val_2;
 
-	val_1 = (unsigned char)s1;
-	val_2 = (unsigned char)s2;
+	val_1 = (unsigned char*)s1;
+	val_2 = (unsigned char*)s2;
 	idx = 0;
 	if (n == 0)
 		return (0);

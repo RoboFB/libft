@@ -6,11 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:57 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:14:45 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/18 16:18:52 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT.H
+#ifndef LIBFT
 
 #include <stdlib.h>
 
@@ -42,5 +42,5 @@ void		*ft_calloc(size_t nelem, size_t elsize);
 char		*ft_strdup(const char *s);
 
 
-#define LIBFT.H
+#define LIBFT
 #endif
