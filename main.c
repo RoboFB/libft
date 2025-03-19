@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 17:50:09 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/19 15:58:08 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -621,9 +621,69 @@ int	test_ft_atoi(void)
 
 
 
-// void		*ft_calloc(size_t nelem, size_t elsize);
-// char		*ft_strdup(const char *s);
+int	test_ft_calloc(void)
+{
+	int pass;
+	int fail;
+	
+	pass = 0;
+	fail = 0;
+	size_t tc1[9] = {-300, -100, 0, 1, 0, 3, 127, 130, 1};
+	size_t tc2[9] = { 100,  300, 0, 0, 1, 3, 127, 1,   1000};
+	size_t res[9] = { 0,     0,  1, 1, 1, 1, 1,   1,   1};
+	for(int i = 0; i<9;i++)
+	{
+		void * check = ft_calloc(tc1[i],tc2[i]);
+		if ( (!res[i] && check == NULL) 
+		|| (res[i] && (tc1[i]*tc2[i]) && ((char *)check)[(tc1[i]*tc2[i])-1] == 0)
+		|| (res[i] && !(tc1[i]*tc2[i]) && check != 0))
+		{
+			pass++;
+		}
+		else
+		{
+			printf("!!!Failed at ft_calloc:__%p__%zu__%zu__\n", check, tc1[i],tc2[i]);
+			fail++;
+		}
+		free(check);
 
+	}
+	printf("test_ft_calloc pass:%d  fail:%d\n",pass, fail);
+	return (fail);
+
+
+	return (0);
+
+}
+
+
+
+
+int	test_ft_strdup(void)
+{
+	int pass;
+	int fail;
+	
+	pass = 0;
+	fail = 0;
+	char* tc[4] = {"abc","def","","45y4554\n\ty"};
+	for(int i = 0; i<4;i++)
+	{
+		char *s = ft_strdup(tc[i]);
+		if (ft_strncmp(s, tc[i], ft_strlen(tc[i]) ) == 0)
+			pass++;
+		else
+		{
+			fail++;
+			printf("!!!Failed at:%s=%s\n", s, tc[i]);
+		}
+		free(s);
+	}
+	printf("test_ft_strdup pass:%d  fail:%d\n",pass, fail);
+
+	return (fail);
+
+}
 
 
 int test_all(void)
@@ -664,7 +724,7 @@ int test_all(void)
 
 int	main(void)
 {
-	test_all();
+	// test_all();
 
 	// test_ft_isalpha();
 	// test_ft_isdigit();
@@ -688,6 +748,10 @@ int	main(void)
 	// test_ft_memcmp();
 	// test_ft_strnstr();
 	// test_ft_atoi();
+	
+	// add to all:
+	// test_ft_calloc();
+	test_ft_strdup();
 
 	return (0);
 }
