@@ -6,32 +6,37 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:32 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/19 21:51:23 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/20 16:40:10 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-HIER WEITER MACHEN {BERLEGEN OB AUCH VON HINTEN STRRSTR YU NUTEN ODER DOCH CHAREACTER CLEAREN I DONT KNOW}
-
-// malloc return a trimed string
+// malloc return new string that ist trimed from both sites with the char of set
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len_s1;
-	size_t	len_set;
-	size_t	p_match;
+	char	*p_start;
+	char	*p_end;
+	char	*p_trimed;
+	size_t	size_trimed;
 
-	char	*trimed;
-
-	len_s1 = ft_strlen(s1);
-	len_set = ft_strlen(set);
-	p_match = ft_strnstr(s1, set, len_s1);
-	if (p_match == NULL)
-		return (NULL);
-	trimed = ft_calloc(len_s1 - len_set + 1, sizeof(char));
-	if (trimed == NULL)
-		return (NULL);
-
-	ft_strlcpy(trimed, p_match, len_set + 1);
-	return (trimed);
+	p_start = (char *)s1;
+	p_end = (char *)(s1 + ft_strlen(s1));
+	while (*p_start && ft_strchr(set, *p_start))
+		p_start++;
+	
+	if (!(*p_start))
+	{	
+		size_trimed = 1;
+	}
+	else
+	{
+		while (p_end > p_start && ft_strchr(set, *p_end))
+			p_end--;
+		size_trimed = (size_t)(p_end - p_start + 2);
+	}
+	p_trimed = ft_calloc(size_trimed, sizeof(char));
+	ft_strlcpy(p_trimed, p_start, size_trimed);
+	
+	return (p_trimed);
 }

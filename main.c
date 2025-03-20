@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/19 21:50:39 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/20 16:11:41 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -704,11 +704,77 @@ int	test_ft_strjoin(void)
 
 int	test_ft_strtrim(void)
 {
-	char	*s;
-	s = ft_strtrim("123","456");
 
-	write(1,s,7);
+	char	bigstr[20];
+	char	rmov[20];
+	char	res[10];
+	char	*s;
+
+	strcpy(bigstr,"abcdef");
+	strcpy(rmov,"bcdexxzi");
+	strcpy(res,"abcdef");
+	s = ft_strtrim(bigstr, rmov);
+	printf("1_test_%s_=_%s_\n",s,res);
 	free(s);
+
+	strcpy(bigstr,"abcdef");
+	strcpy(rmov,"abcdef");
+	strcpy(res,"");
+	s = ft_strtrim(bigstr, rmov);
+	printf("2_test_%s_=_%s_\n",s,res);
+	free(s);
+
+	strcpy(bigstr,"abcd");
+	strcpy(rmov,"x");
+	strcpy(res,"abcd");
+	s = ft_strtrim(bigstr, rmov);
+	printf("3_test_%s_=_%s_\n",s,bigstr);
+	free(s);
+
+	strcpy(bigstr,"");
+	strcpy(rmov,"abc");
+	strcpy(res,"");
+	s = ft_strtrim(bigstr, rmov);
+	printf("4_test_%s_=_%s_\n",s,res);
+	free(s);
+
+	strcpy(bigstr,"abc");
+	strcpy(rmov,"");
+	strcpy(res,"abc");
+	s = ft_strtrim(bigstr, rmov);
+	printf("5_test_%s_=_%s_\n",s,res);
+	free(s);
+
+	strcpy(bigstr,"");
+	strcpy(rmov,"");
+	strcpy(res,"");
+	s = ft_strtrim(bigstr, rmov);
+	printf("6_test_%s_=_%s_\n",s,res);
+	free(s);
+
+	strcpy(bigstr,"abcd");
+	strcpy(rmov,"abc");
+	strcpy(res,"d");
+	s = ft_strtrim(bigstr, rmov);
+	printf("7_test_%s_=_%s_\n",s,res);
+	free(s);
+
+	strcpy(bigstr,"aaaa");
+	strcpy(rmov,"a");
+	strcpy(res,"");
+	s = ft_strtrim(bigstr, rmov);
+	printf("8_test_%s_=_%s_\n",s,res);
+	free(s);
+
+
+	strcpy(bigstr,"aaaababaaaa");
+	strcpy(rmov,"a");
+	strcpy(res,"bab");
+	s = ft_strtrim(bigstr, rmov);
+	printf("9_test_%s_=_%s_\n",s,res);
+	free(s);
+
+
 	return (0);
 }
 
