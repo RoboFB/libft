@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/20 16:11:41 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/21 18:12:11 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -779,6 +779,58 @@ int	test_ft_strtrim(void)
 }
 
 
+
+static void		ft_free_all(char **pp_strs)
+{
+	int idx;
+
+	idx = 0;
+	while (pp_strs[idx])
+	{
+		free(pp_strs[idx]);
+		idx++;
+	}
+	free(pp_strs);
+	return;
+}
+
+int	test_ft_split(void)
+{
+	int pass;
+	int fail;
+	
+	pass = 0;
+	fail = 0;
+	char tc1[20][30] = {"a1a222aaa333a44a","55a66a77aaa88","a55a66a77aaa88","55a66a77aaa88a","","1s1",""};
+	char tc2[20] = {'a','a','a','a',  'a','a','\0',};
+	// char tc1[20][30] = {"abbba","55a66a77aaa88","a55a66a77aaa88","55a66a77aaa88a","","1s1",""};
+	// char tc2[20] = {'\0','a','a','a',  'a','a','\0',};
+	// char res[20][20] = {"x1","x2"};
+	for(int i = 0; i<7;i++)
+	{
+		char ** x = ft_split(tc1[i], tc2[i]);
+		int j = 0;
+		while (j < 4 && x[j])
+		{
+			printf("_test_%s,%d,%s\n",tc1[i],j,x[j]);
+			j++;
+			// pass++;
+		}
+		printf("_test_%p\n", *x);
+		ft_free_all(x);
+		// else
+		// {
+		// 	printf("!!!Failed at ft_calloc:__%p__%zu__%zu__\n", check, tc1[i],tc2[i]);
+		// 	fail++;
+		// }
+		// free(check);
+
+	}
+	printf("test_ft_split pass:%d  fail:%d\n",pass, fail);
+	return (fail);
+}
+
+
 // ---------------------------------------------------------------------
 
 int test_all(void)
@@ -851,7 +903,8 @@ int	main(void)
 
 	// test_ft_substr();
 	// test_ft_strjoin();
-	test_ft_strtrim();
+	// test_ft_strtrim();
+	test_ft_split();
 
 	return (0);
 }
