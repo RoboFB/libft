@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/21 18:12:11 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/23 22:36:34 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -793,6 +793,7 @@ static void		ft_free_all(char **pp_strs)
 	free(pp_strs);
 	return;
 }
+
 
 int	test_ft_split(void)
 {
