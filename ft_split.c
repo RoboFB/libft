@@ -6,83 +6,95 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/21 18:12:44 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/22 16:30:34 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c);
-static void		ft_free_all(char **pp_strs);
+#include <stdio.h>
+// printf("_words:_%d\n", counter_words);
+// printf("size:_%d\n", size_substr);
+// printf("_test_%s,%s\n",s_next,s_old);
+// printf("_num:_%p=%p,%d,%s\n", s_old,s_next,(int)(s_next - s_old),*pp_next);
 
-// malloc return new string that ist trimed from both sites with the char of set
+static int		ft_next_size(char **s_next, char c);
+static int		ft_count_words(char const *s, char c);
+static int		ft_er_free_(char **pp_strs, int idx_words);
+
+// malloc return map of split str or NULL on Error
 char		**ft_split(char const *s, char c)
 {
-	int		idx_char;
+	int		size_substr;
+	char	*p_finder;
 	int		idx_words;
-	int		idx_old;
-	int		counter_words;
-	char	**pp_new_str;
-	
-	idx_char = 0;
+	char	**pp_split;
+
 	idx_words = 0;
-	idx_old = 0;
-	counter_words = ft_count_words(s, c);
-	pp_new_str = ft_calloc(counter_words + 1, sizeof(char *));
-	if (!pp_new_str)
+	p_finder = (char *)s;
+	pp_split = ft_calloc(ft_count_words(s, c) + 1, sizeof(char *));
+	if (pp_split == NULL)
 		return (NULL);
-	while (idx_words < counter_words)
+	while (*p_finder)
 	{
-		while (s[idx_char] && s[idx_char] == c)
-			idx_char++;
-		idx_old = idx_char;
-		while (s[idx_char] && s[idx_char]!= c)
-			idx_char++;
-		pp_new_str[idx_words] = ft_calloc(idx_char - idx_old + 1,sizeof(char));
-		if (pp_new_str[idx_words] == NULL)
-		{
-			ft_free_all(pp_new_str);
+		size_substr = ft_next_size(&p_finder, c);
+		pp_split[idx_words] = ft_calloc(size_substr, sizeof(char));
+		if (!ft_er_free_(pp_split, idx_words))
 			return (NULL);
-		}
-		ft_strlcpy(pp_new_str[idx_words], s + idx_old, idx_char - idx_old + 1);
+		ft_strlcpy(pp_split[idx_words], p_finder - size_substr + 1, size_substr);
 		idx_words++;
 	}
-	pp_new_str[idx_words] = NULL;
-	return (pp_new_str);
+	pp_split[idx_words] = NULL;
+	return (pp_split);
+}
+
+static int		ft_next_size(char **pp_next, char c)
+{
+	char	*s_next;
+	char	*s_old;
+
+	s_next = *pp_next;
+	while (*s_next && *s_next == c)
+		s_next++;
+	s_old = s_next;
+	while (*s_next && *s_next!= c)
+		s_next++;
+	if (s_next > s_old)
+	{
+		*pp_next = s_next;
+		return (s_next - s_old + 1);
+	}
+	else
+		return (0);
+
 }
 
 static int	ft_count_words(char const *s, char c)
 {
-	int		idx;
-	int		idx_old;
+	char	*p_finder;
 	int		counter;
 	
-	idx = 0;
-	idx_old = 0;
+	p_finder = (char *)s;
 	counter = 0;
-	while (s[idx])
-	{
-		while (s[idx] && s[idx] == c)
-			idx++;
-		idx_old = idx;
-		while (s[idx] && s[idx]!= c)
-			idx++;
-		if (idx> idx_old)
-			counter++;
-	}
+	while (ft_next_size(&p_finder, c))
+		counter++;
 	return (counter);
 }
 
-static void		ft_free_all(char **pp_strs)
+static int		ft_er_free_(char **pp_strs, int idx_words)
 {
-	int idx;
-
-	idx = 0;
-	while (pp_strs[idx])
+	if (pp_strs[idx_words] == NULL)
 	{
-		free(pp_strs[idx]);
-		idx++;
+		while (pp_strs[idx_words])
+		{
+			free(pp_strs[idx_words]);
+			idx_words++;
+		}
+		return (0);
 	}
-	free(pp_strs);
-	return;
+	else
+	
+		return (1);
 }
+
+
