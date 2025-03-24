@@ -6,7 +6,7 @@
 #    By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 10:21:00 by rgohrig           #+#    #+#              #
-#    Updated: 2025/03/24 07:59:53 by rgohrig          ###   ########.fr        #
+#    Updated: 2025/03/24 13:41:37 by rgohrig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,12 +40,15 @@ OBJ = $(SRC:.c=.o)
 # defult rule
 all : $(NAME)
 
+# FIX: ar rcs
 # Create the program
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	echo 222222222222
+	ar rs $(NAME) $(OBJ)
 
 # Create the object files
-$(OBJ) : $(SRC)
+$(OBJ) :
+	echo test
 	$(CC) $(CFLAGS) -c $(SRC)
 
 

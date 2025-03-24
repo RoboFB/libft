@@ -6,13 +6,12 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:57 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 11:43:10 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/24 12:46:27 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
-
 #include <stdlib.h>
 
 int			ft_isalpha(int c);
@@ -27,7 +26,7 @@ void		*ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t		ft_strlcat(char *dst, const char * src, size_t dstsize);
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 int			ft_toupper(int c);
 int			ft_tolower(int c);
@@ -41,7 +40,6 @@ int			ft_atoi(const char *nptr);
 
 void		*ft_calloc(size_t nelem, size_t elsize);
 char		*ft_strdup(const char *s);
-
 
 
 char		*ft_substr(char const *s, unsigned int start, size_t len);
