@@ -6,18 +6,17 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:16:18 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/24 16:45:55 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int		num;
 	int		negativ;
 	char	*positon;
-
 
 	num = 0;
 	negativ = 1;
@@ -25,7 +24,9 @@ int ft_atoi(const char *nptr)
 	while (*positon == ' ' || *positon == '\f' || *positon == '\n' \
 			|| *positon == '\r' || *positon == '\t' || *positon == '\v')
 		positon++;
-	if(*positon == '-')
+	if (*positon == '+')
+		positon++;
+	else if (*positon == '-')
 	{
 		negativ = -1;
 		positon++;
