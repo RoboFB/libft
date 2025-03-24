@@ -6,17 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 09:15:46 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/24 09:17:34 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
-// printf("_words:_%d\n", counter_words);
-// printf("size:_%d\n", size_substr);
-// printf("_test_%s,%s\n",s_next,s_old);
-// printf("_num:_%p=%p,%d,%s\n", s_old,s_next,(int)(s_next - s_old),*pp_next);
 
 static int		ft_next_len(char *p_next, char c);
 static int		ft_count_words(char *s, char c);
