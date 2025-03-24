@@ -6,13 +6,14 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:57 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 12:46:27 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/24 15:22:20 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
-#include <stdlib.h>
+# define LIBFT_H
+# include <stdlib.h>
+# include <unistd.h>
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);

@@ -6,7 +6,14 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:09 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/19 16:53:11 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/24 15:24:38 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+	return ;
+}
