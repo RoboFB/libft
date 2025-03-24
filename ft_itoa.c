@@ -6,14 +6,14 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:04 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 11:45:19 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/24 16:26:39 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static int		ft_get_len(int n);
-static void			ft_insert_revers(char *dst, int n, int len);
+static void		ft_insert_revers(char *dst, int n, int len);
 
 char	*ft_itoa(int n)
 {
@@ -24,6 +24,8 @@ char	*ft_itoa(int n)
 	idx = 0;
 	len = ft_get_len(n);
 	str = ft_calloc(len + 1, sizeof(char));
+	if (!str)
+		return (NULL);
 	ft_insert_revers(str, n, len);
 	return (str);
 }
@@ -82,8 +84,8 @@ void	ft_insert_revers(char *dst, int n, int len)
 	return ;
 }
 
-#include <stdio.h>
-#include <limits.h>
+// #include <stdio.h>
+// #include <limits.h>
 // int	main(void)
 // {
 // 	// test get len
@@ -98,15 +100,15 @@ void	ft_insert_revers(char *dst, int n, int len)
 // }
 
 
-int	main(void)
-{
-	// test all
-	printf("1_%s_\n", ft_itoa(INT_MAX));
-	printf("2_%s_\n", ft_itoa(INT_MIN));
-	printf("3_%s_\n", ft_itoa(0));
-	printf("4_%s_\n", ft_itoa(1234));
-	printf("5_%s_\n", ft_itoa(-123));
-	printf("6_%s_\n", ft_itoa(1));
-	printf("7_%s_\n", ft_itoa(-1));
-	return (0);
-}
+// int	main(void)
+// {
+// 	// test all
+// 	printf("1_%s_\n", ft_itoa(INT_MAX));
+// 	printf("2_%s_\n", ft_itoa(INT_MIN));
+// 	printf("3_%s_\n", ft_itoa(0));
+// 	printf("4_%s_\n", ft_itoa(1234));
+// 	printf("5_%s_\n", ft_itoa(-123));
+// 	printf("6_%s_\n", ft_itoa(1));
+// 	printf("7_%s_\n", ft_itoa(-1));
+// 	return (0);
+// }
