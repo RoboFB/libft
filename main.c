@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/25 13:23:08 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/25 15:56:51 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -602,6 +602,19 @@ int	test_ft_strncmp(void)
 }
 
 
+
+int test_ft_memchr(void)
+{
+	char	*src = "/|\x12\xff\x09\x42\2002\42|\\";
+	int		size = 10;
+
+	if (memchr(src, '\200', size) == ft_memchr(src, '\200', size))
+		printf("    OK:_%lu=%lu\n",sizeof(memchr(src, '\200', size)) , sizeof(ft_memchr(src, '\200', size)));
+	else
+		printf("NOT OK:_%p=%p\n",(unsigned char *)memchr(src, '\200', size) ,(unsigned char *)ft_memchr(src, '\200', size));
+	return (0);
+}
+
 int test_ft_memcmp(void)
 {
 	return (0);
@@ -918,10 +931,11 @@ int	main(void)
 	// test_ft_memset_2();
 	// test_ft_bzero();
 	// test_ft_memcpy_1();
-	// test_ft_memcpy_2();
+	// test_ft_memcpy_2()
+	test_ft_memchr();
 	// test_ft_memmove();
 	// test_ft_strlcpy();
-	test_ft_strlcat();
+	// test_ft_strlcat();
 	// test_ft_toupper();
 	// test_ft_tolower();
 	// test_ft_strchr();
