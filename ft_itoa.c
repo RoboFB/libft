@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:04 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 16:26:39 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/25 10:45:48 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ static void		ft_insert_revers(char *dst, int n, int len);
 
 char	*ft_itoa(int n)
 {
-	int		idx;
 	int		len;
 	char	*str;
 
-	idx = 0;
 	len = ft_get_len(n);
 	str = ft_calloc(len + 1, sizeof(char));
 	if (!str)

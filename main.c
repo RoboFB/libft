@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 09:18:13 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/25 13:23:08 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -378,24 +378,58 @@ int test_ft_strlcpy(void)
 }
 
 
+static void help_test_strlcat(char * test_1,char *test_2,char *test_3,int size)
+{
+	printf("      TEST_%s_%s_\n", test_1,test_2);
+
+	size_t res_og = strlcat(test_1,test_3,size);
+	size_t res_my = ft_strlcat(test_2,test_3,size);
+	if (res_og == res_my)
+		printf("OK       og:_%s_   my:_%s_\n         RET_og_%lu_   RET_my_%lu_\n", test_1, test_2,res_og,res_my);
+	else
+		printf("!! Error_og:_%s_   my:_%s_\n         RET_og_%lu_   RET_my_%lu_\n\n\n",  test_1, test_2,res_og,res_my);
+}
+
 int	test_ft_strlcat(void)
 {
-	char test_1[10];
-	char test_2[10];
-	char test_3[10];
+	char test_1[30];
+	char test_2[30];
+	char test_3[50];
 
-	strlcpy(test_1,"123",4);
-	strlcpy(test_2,"123",4);
-	strlcpy(test_3,"4444",5);
-	printf("->%s,%s\n", test_1,test_2);
+	strcpy(test_1,"0123456789");
+	strcpy(test_2,"0123456789");
+	strcpy(test_3,"01234567890123456789");
+	help_test_strlcat(test_1,test_2,test_3,5);
 
-	size_t res_og = strlcat(test_1,test_3,8);
-	size_t res_my = ft_strlcat(test_2,test_3,8);
-	if (res_og == res_my)
-		printf("OK_og:%s-my:%s,%lu,%lu\n", test_1, test_2,res_og,res_my);
-	else
-		printf("Error_og:%s-my:%s,%lu,%lu\n",  test_1, test_2,res_og,res_my);
+	strcpy(test_1,"01234567890123456789");
+	strcpy(test_2,"01234567890123456789");
+	strcpy(test_3,"0123456789");
+	help_test_strlcat(test_1,test_2,test_3,5);
 
+	strcpy(test_1,"0123456789");
+	strcpy(test_2,"0123456789");
+	strcpy(test_3,"0123456789");
+	help_test_strlcat(test_1,test_2,test_3,40);
+
+	strcpy(test_1,"bbb");
+	strcpy(test_2,"bbb");
+	strcpy(test_3,"");
+	help_test_strlcat(test_1,test_2,test_3,3);
+
+	strcpy(test_1,"");
+	strcpy(test_2,"");
+	strcpy(test_3,"ccc");
+	help_test_strlcat(test_1,test_2,test_3,3);
+
+	strcpy(test_1,"there is no stars in the sky");
+	strcpy(test_2,"there is no stars in the sky");
+	strcpy(test_3,"the cake is a lie !\0I'm hidden lol\r\n");
+	help_test_strlcat(test_1,test_2,test_3,strlen("the cake is a lie !\0I'm hidden lol\r\n") + 4);
+	
+	strcpy(test_1,"B");
+	strcpy(test_2,"B");
+	strcpy(test_3,"aaa");
+	help_test_strlcat(test_1,test_2,test_3,strlen("the cake is a lie !\0I'm hidden lol\r\n") + 4);
 	
 	return (0);
 }
@@ -887,7 +921,7 @@ int	main(void)
 	// test_ft_memcpy_2();
 	// test_ft_memmove();
 	// test_ft_strlcpy();
-	// test_ft_strlcat();
+	test_ft_strlcat();
 	// test_ft_toupper();
 	// test_ft_tolower();
 	// test_ft_strchr();
@@ -905,7 +939,7 @@ int	main(void)
 	// test_ft_substr();
 	// test_ft_strjoin();
 	// test_ft_strtrim();
-	test_ft_split();
+	// test_ft_split();
 
 	return (0);
 }
