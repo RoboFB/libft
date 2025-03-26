@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:20:41 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/26 14:11:24 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*src_base;
 	size_t			idx;
 
+	if (dst == src)
+		return (dst);
 	dst_base = (unsigned char *)dst;
 	src_base = (unsigned char *)src;
 	idx = (size_t)0;
