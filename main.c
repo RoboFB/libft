@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/26 10:21:30 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/26 13:01:14 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -926,7 +926,7 @@ int	main(void)
 	// test_ft_isalnum();
 	// test_ft_isascii();
 	// test_ft_isprint();
-	test_ft_strlen();
+	// test_ft_strlen();
 	// test_ft_memset_1();
 	// test_ft_memset_2();
 	// test_ft_bzero();
@@ -955,7 +955,7 @@ int	main(void)
 
 	// test_ft_strjoin();
 	// test_ft_strtrim();
-	// test_ft_split();
+	test_ft_split();
 
 	return (0);
 }
