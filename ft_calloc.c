@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 12:18:33 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/26 08:10:02 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 void		*ft_calloc(size_t nelem, size_t elsize)
 {
 	void	*location;
-
-	if (nelem && elsize > (size_t)-1 / nelem)
-		return (NULL); // i hvae no idee if i really need that?
 
 	location = malloc(nelem * elsize);
 	if (location == NULL)

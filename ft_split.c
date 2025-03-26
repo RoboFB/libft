@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 16:51:51 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/26 07:42:18 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,3 @@ static int	ft_er_free_(char **pp_strs, int idx_words)
 	else
 		return (1);
 }
-
-

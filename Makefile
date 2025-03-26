@@ -6,7 +6,7 @@
 #    By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 10:21:00 by rgohrig           #+#    #+#              #
-#    Updated: 2025/03/24 13:41:37 by rgohrig          ###   ########.fr        #
+#    Updated: 2025/03/26 08:54:13 by rgohrig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,12 +43,12 @@ all : $(NAME)
 # FIX: ar rcs
 # Create the program
 $(NAME) : $(OBJ)
-	echo 222222222222
+	@echo __MAKE__$(NAME)__
 	ar rs $(NAME) $(OBJ)
 
 # Create the object files
 $(OBJ) :
-	echo test
+	@echo __MAKE__OBJ__
 	$(CC) $(CFLAGS) -c $(SRC)
 
 
@@ -70,6 +70,24 @@ re : fclean all
 .PHONY : all clean fclean re
 
 
+
+
+# **** DEBUG NEED FIX FOR CORECT RULES  AND NOT ON COMPILER COMMAND ********* #
+DEBUGFLAGS = -g -Wall -Werror -Wextra -fsanitize=address
+MAINNAME = main.c
+
+# $(OBJ_DEBUG) :
+# 	@echo __Debug__MAKE__OBJ__
+# 	$(CC) $(DEBUGFLAGS) -c $(SRC)
+
+main : $(OBJ_DEBUG)
+	@echo __Debug__$(CC)__$(DEBUGFLAGS)__$(MAINNAME)__
+	$(CC) $(DEBUGFLAGS) $(MAINNAME) $(SRC)
+
+debug : fclean main
+
+
+.PHONY : main debug
 
 # *************************** Old ********************************************* #
 

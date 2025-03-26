@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/25 15:56:51 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/26 10:21:30 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,15 +194,15 @@ int	test_ft_strlen(void)
 	char	*test_str;
 
 	test_str = "1";
-	printf("%zu=%zu(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
+	printf("my:%zu=og:%zustr:(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
 	test_str = "234563423423rg 45y4y3h89t gn94t93 ";
-	printf("%zu=%zu(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
+	printf("my:%zu=og:%zustr:(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
 	test_str = "";
-	printf("%zu=%zu(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
+	printf("my:%zu=og:%zustr:(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
 	test_str = "\0";
-	printf("%zu=%zu(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
+	printf("my:%zu=og:%zustr:(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
 	test_str = "aaa\0bbb";
-	printf("%zu=%zu(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
+	printf("my:%zu=og:%zustr:(%s)\n",ft_strlen(test_str), strlen(test_str), test_str);
 	return (0);
 }
 
@@ -732,9 +732,9 @@ int	test_ft_strdup(void)
 int	test_ft_substr(void)
 {
 	char	*s;
-	s = ft_substr("abcde",2,3);
+	s = ft_substr("",1,1);
 
-	write(1,s,4);
+	printf("_S_%s__L_%zu__p_%p", s, ft_strlen(s),s);
 	free(s);
 	return (0);
 }
@@ -926,13 +926,13 @@ int	main(void)
 	// test_ft_isalnum();
 	// test_ft_isascii();
 	// test_ft_isprint();
-	// test_ft_strlen();
+	test_ft_strlen();
 	// test_ft_memset_1();
 	// test_ft_memset_2();
 	// test_ft_bzero();
 	// test_ft_memcpy_1();
 	// test_ft_memcpy_2()
-	test_ft_memchr();
+	// test_ft_memchr();
 	// test_ft_memmove();
 	// test_ft_strlcpy();
 	// test_ft_strlcat();
@@ -951,6 +951,8 @@ int	main(void)
 
 
 	// test_ft_substr();
+
+
 	// test_ft_strjoin();
 	// test_ft_strtrim();
 	// test_ft_split();
