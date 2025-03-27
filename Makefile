@@ -6,7 +6,7 @@
 #    By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 10:21:00 by rgohrig           #+#    #+#              #
-#    Updated: 2025/03/27 15:15:12 by rgohrig          ###   ########.fr        #
+#    Updated: 2025/03/27 16:27:48 by rgohrig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,15 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
 		ft_putendl_fd.c ft_putnbr_fd.c
 
-BONUS_SRC = ft_lstnew.c
+# BONUS SRC
+BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+		ft_lstmap.c 
+
 
 # Object Files
-
 OBJ = $(SRC:.c=.o)
+# BONUS OBJ
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 # DEP = $(SRC:.c=.d)
@@ -51,25 +55,26 @@ all : $(NAME)
 # Create the program
 $(NAME) : $(OBJ)
 	@echo 🐸🐸🐸__ar__MAKE__$(NAME)__
-	@ar rcs $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
 # Create the object files
 %.o : %.c
 	@echo 🐸__OBJ__MAKE__$@__
 	@$(CC) $(CFLAGS) -c $<
 
-bonus :
-	
+# Bonus
+bonus : $(NAME) $(BONUS_OBJ)
+	@echo 🍾🍾🍾__ar__MAKE__$(NAME)__
+	ar rcs $(NAME) $(BONUS_OBJ)
+
 
 # *************************** Clean ****************************************** #
 
 clean :
-	@echo 🗑️$(OBJ)
-	@rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean : clean
-	@echo 🗑️$(NAME)
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re : fclean all
 
@@ -101,7 +106,3 @@ debug : fclean main
 #debug : clean
 #	CFLAGS += -fsanitize=address,undefined -Wall -Werror -Wextra
 
-
-# !!!DANGERES!!! Greate all files 
-# %::
-# 	cp _R_empty.c $@
