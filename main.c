@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/26 13:01:14 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/27 11:14:50 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -627,14 +627,15 @@ int test_ft_strnstr(void)
 	char	littel[10];
 
 
-	strcpy(big,"1234567");
-	strcpy(littel,"12");
-	char* my = ft_strnstr(big,littel,2);
-	char* og = strstr(big,littel);
-	printf("my:%sg:%p\n",my,og);
+	strcpy(big,"123");
+	strcpy(littel,"123");
+	char	*my = ft_strnstr(big,littel,3);
+	// char* og = strstr(big,littel,3);
 
-
-
+	if(!my)
+		printf("_%p_", my);
+	else
+		printf("_S_%s__L_%zu__p_%p", my, ft_strlen(my), my);
 	return (0);
 }
 
@@ -942,7 +943,7 @@ int	main(void)
 	// test_ft_strrchr();
 	// test_ft_strncmp();
 	// test_ft_memcmp();
-	// test_ft_strnstr();
+	test_ft_strnstr();
 	// test_ft_atoi();
 	
 	// add to all:
@@ -955,7 +956,7 @@ int	main(void)
 
 	// test_ft_strjoin();
 	// test_ft_strtrim();
-	test_ft_split();
+	// test_ft_split();
 
 	return (0);
 }

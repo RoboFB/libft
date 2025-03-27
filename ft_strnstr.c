@@ -6,34 +6,41 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/26 15:52:50 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/27 11:27:05 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// locate a substring in a string max len return start of littel or 0 or big if len=0
+// locate a needel in a hay string, max len ->return needel start or 0 or big if littel emty
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	idx_big;
-	size_t	idx_little;
-	size_t	len_little;
+	size_t	idx_lit;
+	// size_t	len_little;
 
 	idx_big = 0;
-	idx_little = 0;
 	if (!big)
-	return (NULL);
+		return (NULL);
 	if (!*little)
 		return ((char *)big);
-	len_little = ft_strlen(little);
-	if (len_little > len)
-		return (NULL);
-	while (big[idx_big])// && idx_big < len + 1)
+	// len_little = ft_strlen(little);
+	// if (len_little > len)
+	// 	return (NULL);
+	while (big[idx_big])// && idx_big < len + 1) ??? +1 ???
 	{
-		if (!ft_strncmp(&big[idx_big], little, len_little))
+		idx_lit = 0;
+		while (big[idx_big + idx_lit] && little[idx_lit]
+			&& big[idx_big + idx_lit] == little[idx_lit]
+			&& (idx_big + idx_lit) < len)
+		{
+			idx_lit++;
+		}
+		if (!little[idx_lit])
 			return ((char *)big + idx_big);
 		idx_big++;
-
 	}
 	return (NULL);
 }
+
+// if (!ft_strncmp(&big[idx_big], little, len_little))
