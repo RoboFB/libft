@@ -6,7 +6,7 @@
 #    By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 10:21:00 by rgohrig           #+#    #+#              #
-#    Updated: 2025/03/27 16:27:48 by rgohrig          ###   ########.fr        #
+#    Updated: 2025/03/27 17:46:52 by rgohrig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,21 +33,23 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_putendl_fd.c ft_putnbr_fd.c
 
 # BONUS SRC
-BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-		ft_lstmap.c 
+BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
+		ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
+		ft_lstmap_bonus.c
 
 
 # Object Files
-OBJ = $(SRC:.c=.o)
+OBJ := $(SRC:.c=.o)
 # BONUS OBJ
-BONUS_OBJ = $(BONUS_SRC:.c=.o)
+BONUS_OBJ := $(BONUS_SRC:.c=.o)
 
 # DEP = $(SRC:.c=.d)
 # -include $(DEP)
 
 
 # *************************** Rules ****************************************** #
+
+
 
 # defult rule
 all : $(NAME)
@@ -60,12 +62,13 @@ $(NAME) : $(OBJ)
 # Create the object files
 %.o : %.c
 	@echo 🐸__OBJ__MAKE__$@__
-	@$(CC) $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $<
 
 # Bonus
-bonus : $(NAME) $(BONUS_OBJ)
+bonus : $(NAME) $(OBJ)
 	@echo 🍾🍾🍾__ar__MAKE__$(NAME)__
-	ar rcs $(NAME) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ)
+
 
 
 # *************************** Clean ****************************************** #
@@ -81,25 +84,25 @@ re : fclean all
 
 # *************************** Phony ****************************************** #
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re bonus
 
 
 
 
 # **** DEBUG NEED FIX FOR CORECT RULES  AND NOT ON COMPILER COMMAND ********* #
-MAIN_SRC := main.c
-MAIM_OBJ := $(MAIN_SRC:.c=.o)
+# MAIN_SRC := _R_main.c
+# MAIM_OBJ := $(MAIN_SRC:.c=.o)
 
 
-main : $(MAIM_OBJ) $(OBJ)
-	@echo _!!!_DEBUG_!!!__
-	$(CC) $(CFLAGS) $(MAIM_OBJ) $(OBJ)
+# mainR : $(MAIM_OBJ) $(OBJ)
+# 	@echo _!!!_DEBUG_!!!__
+# 	$(CC) $(CFLAGS) $(MAIM_OBJ) $(OBJ)
 
-debug : CFLAGS += -g -fsanitize=address
-debug : fclean main
+# debug : CFLAGS += -g -fsanitize=address
+# debug : fclean mainR
 
 
-.PHONY : debug main
+# .PHONY : debug
 
 # *************************** Old ********************************************* #
 
