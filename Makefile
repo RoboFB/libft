@@ -6,7 +6,7 @@
 #    By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 10:21:00 by rgohrig           #+#    #+#              #
-#    Updated: 2025/03/26 08:54:13 by rgohrig          ###   ########.fr        #
+#    Updated: 2025/03/27 15:15:12 by rgohrig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@
 
 # Compiler & Flags
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS := -Wall -Werror -Wextra#-MMD -MP
 
 # Prgramme name
-NAME = libft.a
+NAME := libft.a
 
 # Header File
-HEADER = libft.h
+# HEADER = libft.h
 
 # Source Files
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -31,8 +31,16 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
 		ft_putendl_fd.c ft_putnbr_fd.c
+
+BONUS_SRC = ft_lstnew.c
+
 # Object Files
+
 OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
+
+# DEP = $(SRC:.c=.d)
+# -include $(DEP)
 
 
 # *************************** Rules ****************************************** #
@@ -40,27 +48,28 @@ OBJ = $(SRC:.c=.o)
 # defult rule
 all : $(NAME)
 
-# FIX: ar rcs
 # Create the program
 $(NAME) : $(OBJ)
-	@echo __MAKE__$(NAME)__
-	ar rs $(NAME) $(OBJ)
+	@echo 🐸🐸🐸__ar__MAKE__$(NAME)__
+	@ar rcs $(NAME) $(OBJ)
 
 # Create the object files
-$(OBJ) :
-	@echo __MAKE__OBJ__
-	$(CC) $(CFLAGS) -c $(SRC)
+%.o : %.c
+	@echo 🐸__OBJ__MAKE__$@__
+	@$(CC) $(CFLAGS) -c $<
 
-
-
+bonus :
+	
 
 # *************************** Clean ****************************************** #
 
 clean :
-	rm -f $(OBJ)
+	@echo 🗑️$(OBJ)
+	@rm -f $(OBJ)
 
 fclean : clean
-	rm -f $(NAME)
+	@echo 🗑️$(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
 
@@ -73,21 +82,19 @@ re : fclean all
 
 
 # **** DEBUG NEED FIX FOR CORECT RULES  AND NOT ON COMPILER COMMAND ********* #
-DEBUGFLAGS = -g -Wall -Werror -Wextra -fsanitize=address
-MAINNAME = main.c
+MAIN_SRC := main.c
+MAIM_OBJ := $(MAIN_SRC:.c=.o)
 
-# $(OBJ_DEBUG) :
-# 	@echo __Debug__MAKE__OBJ__
-# 	$(CC) $(DEBUGFLAGS) -c $(SRC)
 
-main : $(OBJ_DEBUG)
-	@echo __Debug__$(CC)__$(DEBUGFLAGS)__$(MAINNAME)__
-	$(CC) $(DEBUGFLAGS) $(MAINNAME) $(SRC)
+main : $(MAIM_OBJ) $(OBJ)
+	@echo _!!!_DEBUG_!!!__
+	$(CC) $(CFLAGS) $(MAIM_OBJ) $(OBJ)
 
+debug : CFLAGS += -g -fsanitize=address
 debug : fclean main
 
 
-.PHONY : main debug
+.PHONY : debug main
 
 # *************************** Old ********************************************* #
 
