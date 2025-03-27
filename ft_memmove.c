@@ -6,29 +6,25 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/26 14:11:24 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/27 12:00:51 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// move scr to dst n bytes can overlap -> void * dst
+// move scr to dst. n bytes. can overlap. -> void * dst
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*dst_base;
-	unsigned char	*src_base;
 	size_t			idx;
 
 	if (dst == src)
 		return (dst);
-	dst_base = (unsigned char *)dst;
-	src_base = (unsigned char *)src;
-	idx = (size_t)0;
+	idx = 0;
 	if (dst < src)
 	{
 		while (idx < len)
 		{
-			dst_base[idx] = src_base[idx];
+			((unsigned char *)dst)[idx] = ((unsigned char *)src)[idx];
 			idx++;
 		}
 	}
@@ -38,7 +34,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		while (idx)
 		{
 			idx--;
-			dst_base[idx] = src_base[idx];
+			((unsigned char *)dst)[idx] = ((unsigned char *)src)[idx];
 		}
 	}
 	return (dst);

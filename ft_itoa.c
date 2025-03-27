@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:04 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/25 10:45:48 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/27 11:47:31 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,6 @@ void	ft_insert_revers(char *dst, int n, int len)
 // 	if (get_len(-1) != 2)			printf("7_%d_\n", get_len(-1));
 // 	return (0);
 // }
-
-
 // int	main(void)
 // {
 // 	// test all

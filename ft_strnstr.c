@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/27 11:27:05 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/27 11:31:43 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	// len_little = ft_strlen(little);
 	// if (len_little > len)
 	// 	return (NULL);
-	while (big[idx_big])// && idx_big < len + 1) ??? +1 ???
+	while (big[idx_big])// && idx_big < len + 1) ??? +1 ??? (idx_big + idx_lit) < len ???
 	{
 		idx_lit = 0;
 		while (big[idx_big + idx_lit] && little[idx_lit]

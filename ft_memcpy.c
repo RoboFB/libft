@@ -6,13 +6,11 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/26 10:37:10 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/27 11:48:05 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// TODO: THINK OVER RESTRICT KEYWORD -> what if dest and sorce are the same pointer -> I don't care
 
 // copy scr to dst n bytes not overlap -> void * dst
 void	*ft_memcpy(void *dst, const void *src, size_t n)
