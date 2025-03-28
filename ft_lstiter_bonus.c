@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 16:28:23 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/28 12:20:20 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/28 15:10:55 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
 		return ;
-
 	if (lst->next)
 	{
 		ft_lstiter(lst->next, f);
