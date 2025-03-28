@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 16:28:28 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/27 17:04:45 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/28 10:57:17 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int size;
+	int		size;
 
 	size = 0;
 	if (!lst)
-		return(0);
+		return (0);
 	while (lst->next)
 	{
 		lst = lst->next;

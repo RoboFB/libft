@@ -6,7 +6,7 @@
 #    By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 10:21:00 by rgohrig           #+#    #+#              #
-#    Updated: 2025/03/27 17:46:52 by rgohrig          ###   ########.fr        #
+#    Updated: 2025/03/28 10:33:06 by rgohrig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,9 +65,9 @@ $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) -c $<
 
 # Bonus
-bonus : $(NAME) $(OBJ)
+bonus : $(NAME) $(OBJ) $(BONUS_OBJ)
 	@echo 🍾🍾🍾__ar__MAKE__$(NAME)__
-	ar rcs $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
 
 
