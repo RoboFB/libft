@@ -6,12 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 15:19:39 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/28 10:38:25 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/28 12:42:15 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// F: Malloc -> *new_node or NULL
 t_list	*ft_lstnew(void *content)
 {
 	t_list		*new_node;
