@@ -6,14 +6,14 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 16:28:27 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/31 12:21:19 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 12:25:35 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static
-t_list		*ft_lstfirst(t_list *lst, void *(*f)(void *), void (*del)(void *));
+static t_list
+	*ft_lstfirst(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // F: malloc, free R: duplicated *lst or NULL
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
@@ -45,8 +45,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (start_new_lst);
 }
 
-static
-t_list	*ft_lstfirst(t_list *lst, void *(*f)(void *), void (*del)(void *))
+// F: malloc R: new_node or NULL
+static t_list
+	*ft_lstfirst(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list		*new_node;
 	void		*new_content;
