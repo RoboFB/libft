@@ -6,12 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:28 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 14:54:01 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 14:26:11 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// F: Malloc R: str or NULL  | use function f to make new str char by char
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	idx;

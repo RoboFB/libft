@@ -6,23 +6,23 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:20:23 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 12:51:41 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// set c in b len times -> return void pointer to start of data
+// R: void *b | E: set memory(b) to char(c) len times
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*base;
+	unsigned char	*buffer;
 	size_t			idx;
 
-	base = (unsigned char *)b;
+	buffer = (unsigned char *)b;
 	idx = 0;
 	while (idx < len)
 	{
-		base[idx] = (unsigned char)c;
+		buffer[idx] = (unsigned char)c;
 		idx++;
 	}
 	return (b);

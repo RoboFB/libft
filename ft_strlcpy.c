@@ -6,13 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/27 11:49:23 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 13:02:45 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// dstsize=char len + '\0' -> Full size of dst copys dsrsize -1 for Null
+// R: len(src) | E: copy (dst)<-(src) until (dstsize) - 1 to Null terminate dst
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t		idx;

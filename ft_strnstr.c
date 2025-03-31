@@ -6,13 +6,14 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/28 15:16:22 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 13:48:09 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// in big find little, max len. -> needel start or 0 or big if littel emty str
+// R: pointer to start of little in big or NULL or *big if little empty true str
+// F: find (little) in (big) until (len)
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	idx_big;
@@ -21,7 +22,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	idx_big = 0;
 	if (!*little)
 		return ((char *)big);
-	while (big[idx_big])
+	while (big[idx_big] && idx_big < len)
 	{
 		idx_lit = 0;
 		while (big[idx_big + idx_lit] && little[idx_lit]

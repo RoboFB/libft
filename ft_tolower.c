@@ -6,13 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/27 11:47:34 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 13:21:22 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// A-Z -> a-z
+// R: one character  | F: upercase to lowercase
 int	ft_tolower(int c)
 {
 	if ('A' <= c && 'Z' >= c)

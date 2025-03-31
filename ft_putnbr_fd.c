@@ -6,12 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:16 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/24 16:20:06 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 14:28:19 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// F: write
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)

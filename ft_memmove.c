@@ -6,13 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/27 12:00:51 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 12:56:39 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// move scr to dst. n bytes. can overlap. -> void * dst
+// R: void *dst | E: move memory(src) to (dst) len(n) times. !can overlap!
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t			idx;

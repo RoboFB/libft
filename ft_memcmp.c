@@ -6,13 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/27 11:49:42 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 13:38:37 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// compare byts return 0 if corect
+// R: same: 0 not same: bigger or smaller | F: s1 == s2 until (n) uses bytes
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			idx;

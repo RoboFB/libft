@@ -6,13 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 15:24:03 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/27 12:04:25 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 13:58:20 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// F: Malloc duplicate String uses malloc, retur char* to new_string
+// F: Malloc R: new *str or Null  | duplicates true str(s)
 char	*ft_strdup(const char *s)
 {
 	char	*new_string;

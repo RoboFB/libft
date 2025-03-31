@@ -6,13 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/27 11:48:05 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 12:54:53 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// copy scr to dst n bytes not overlap -> void * dst
+// R: void *dst | E: copy memory(src) to (dst) len(n) times. needs no overlap!
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*dst_base;

@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 16:28:14 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/28 15:10:11 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 14:33:23 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,3 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 	return ;
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char	*test = "baum";
-// 	t_list	*x = ft_lstnew(test);
-// 	printf("%s\n",(char*)x->content);
-// 	free(x);
-// 	return (0);
-// }

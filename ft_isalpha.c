@@ -6,13 +6,13 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 11:18:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/18 15:17:31 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 12:37:48 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// A-Z or a-z -> return 1
+// R: letter (A-Z||a-z) -> 1
 int	ft_isalpha(int c)
 {
 	if (('A' <= c && 'Z' >= c) || ('a' <= c && 'z' >= c))

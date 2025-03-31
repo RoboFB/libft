@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:15:22 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/27 11:14:50 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 14:23:39 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -878,6 +878,35 @@ int	test_ft_split(void)
 	printf("test_ft_split pass:%d  fail:%d\n",pass, fail);
 	return (fail);
 }
+
+
+// #include <stdio.h>
+// #include <limits.h>
+// int	main(void)
+// {
+// 	// test get len
+// 	if (get_len(INT_MAX) != 10)		printf("1_%d_\n", get_len(INT_MAX));
+// 	if (get_len(INT_MIN) != 11)		printf("2_%d_\n", get_len(INT_MIN));
+// 	if (get_len(0) != 1)			printf("3_%d_\n", get_len(0));
+// 	if (get_len(1234) != 4)			printf("4_%d_\n", get_len(1234));
+// 	if (get_len(-123) != 4)			printf("5_%d_\n", get_len(-123));
+// 	if (get_len(1) != 1)			printf("6_%d_\n", get_len(1));
+// 	if (get_len(-1) != 2)			printf("7_%d_\n", get_len(-1));
+// 	return (0);
+// }
+// int	main(void)
+// {
+// 	// test all
+// 	printf("1_%s_\n", ft_itoa(INT_MAX));
+// 	printf("2_%s_\n", ft_itoa(INT_MIN));
+// 	printf("3_%s_\n", ft_itoa(0));
+// 	printf("4_%s_\n", ft_itoa(1234));
+// 	printf("5_%s_\n", ft_itoa(-123));
+// 	printf("6_%s_\n", ft_itoa(1));
+// 	printf("7_%s_\n", ft_itoa(-1));
+// 	return (0);
+// }
+
 
 
 // ---------------------------------------------------------------------

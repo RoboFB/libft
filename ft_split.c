@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:53:21 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/26 14:00:04 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 14:21:37 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,49 +18,35 @@ static char const	*ft_next_len(char const *p_next, char c, int *len);
 static int			ft_count_words(char const *s, char c);
 static int			ft_er_free_(char **pp_strs, int idx_words);
 
-// malloc return map of split str or NULL on Error
+// F: Malloc R: map of the new splitted strs or NULL
 char	**ft_split(char const *s, char c)
 {
-	char const		*positon;
+	char const		*position;
 	int				len_substr;
 	int				idx_words;
 	char			**pp_split;
 
 	idx_words = 0;
-	positon = s;
+	position = s;
 	pp_split = ft_calloc(ft_count_words(s, c) + 1, sizeof(char *));
 	if (pp_split == NULL)
 		return (NULL);
-	while (*positon)
+	while (*position)
 	{
 		len_substr = 0;
-		positon = ft_next_len(positon, c, &len_substr);
-		if (!positon)
+		position = ft_next_len(position, c, &len_substr);
+		if (!position)
 			return (pp_split);
 		if (len_substr)
 		{
-			pp_split[idx_words] = ft_substr(positon, 0, len_substr);
+			pp_split[idx_words] = ft_substr(position, 0, len_substr);
 			if (!ft_er_free_(pp_split, idx_words++))
 				return (NULL);
-			positon += len_substr;
+			position += len_substr;
 		}
 	}
 	return (pp_split);
 }
-// while (*p_sub_start)
-// {
-// 	len_substr = ft_next_len(p_sub_start, c);
-// 	pp_split[idx_words] = ft_calloc(len_substr + 1, sizeof(char));
-// 	if (!ft_er_free_(pp_split, idx_words))
-// 		return (NULL);
-// 	while (*p_sub_start == c)
-// 		p_sub_start++;
-// 	ft_strlcpy(pp_split[idx_words], p_sub_start, len_substr + 1);
-// 	p_sub_start += len_substr;
-// 	idx_words++;
-// }
-// pp_split[idx_words] = NULL;
-// return (pp_split);
 
 static
 char const	*ft_next_len(char const *p_next, char c, int *len)
@@ -84,22 +70,22 @@ char const	*ft_next_len(char const *p_next, char c, int *len)
 static
 int	ft_count_words(char const *s, char c)
 {
-	char const	*positon;
+	char const	*position;
 	int			counter;
 	int			len;
 
 	counter = 0;
 	len = 0;
-	positon = s;
-	while (*positon)
+	position = s;
+	while (*position)
 	{
 		len = 0;
-		positon = ft_next_len(positon, c, &len);
-		if (!positon && len)
+		position = ft_next_len(position, c, &len);
+		if (!position && len)
 			return (counter);
-		else if (!positon && !len)
+		else if (!position && !len)
 			return (counter);
-		positon += len;
+		position += len;
 		counter++;
 	}
 	return (counter);
