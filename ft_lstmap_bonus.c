@@ -6,13 +6,16 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 16:28:27 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/03/28 16:57:09 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/03/31 12:21:19 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// F: malloc, free duplicate list, dub cont with given function.
+static
+t_list		*ft_lstfirst(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// F: malloc, free R: duplicated *lst or NULL
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list		*new_node;
@@ -21,13 +24,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del)
 		return (NULL);
-	new_content = f(lst->content);
-	new_node = ft_lstnew(new_content);
+	new_node = ft_lstfirst(lst, f, del);
 	if (!new_node)
-	{
-		del(new_content);
 		return (NULL);
-	}
 	start_new_lst = new_node;
 	lst = lst->next;
 	while (lst)
@@ -44,4 +43,22 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst->next;
 	}
 	return (start_new_lst);
+}
+
+static
+t_list	*ft_lstfirst(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list		*new_node;
+	void		*new_content;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	new_content = f(lst->content);
+	new_node = ft_lstnew(new_content);
+	if (!new_node)
+	{
+		del(new_content);
+		return (NULL);
+	}
+	return (new_node);
 }

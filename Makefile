@@ -6,7 +6,7 @@
 #    By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 10:21:00 by rgohrig           #+#    #+#              #
-#    Updated: 2025/03/28 16:23:33 by rgohrig          ###   ########.fr        #
+#    Updated: 2025/03/31 11:38:51 by rgohrig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,18 +44,18 @@ all : $(NAME)
 
 # Create the object files
 %.o : %.c
-	@echo _🐸_object__$@__
 	@$(CC) $(CFLAGS) -c $<
+	@echo _🐸_object__$@__
 
 # Create the Arive
 $(NAME) : $(OBJ)
-	@echo _🐸🐸🐸_default_Arive_$(NAME)__
 	@ar rcs $(NAME) $(OBJ)
+	@echo _🐸🐸🐸_default_Arive_$(NAME)__
 
 # Bonus rule
 bonus : $(NAME) $(OBJ) $(BONUS_OBJ)
-	@echo _💎💎💎_bonus_Arive__
 	@ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+	@echo _💎💎💎_bonus_Arive__
 
 
 # *************************** Clean ****************************************** #
