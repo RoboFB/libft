@@ -6,7 +6,7 @@
 #    By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 10:21:00 by rgohrig           #+#    #+#              #
-#    Updated: 2025/03/31 15:56:39 by rgohrig          ###   ########.fr        #
+#    Updated: 2025/05/13 15:15:33 by rgohrig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,10 @@ BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 # Bonus Object Files
 BONUS_OBJ := $(BONUS_SRC:.c=.o)
 
+# Printf
+PRINTF_DIR := printf_ft
+PRINTF_LIB := $(PRINTF_DIR)/libftprintf.a
+
 
 # *************************** Rules ****************************************** #
 
@@ -48,22 +52,29 @@ all : $(NAME)
 	@echo _🐸_object__$@__
 
 # Create the Arrive
-$(NAME) : $(OBJ)
-	@ar rcs $(NAME) $(OBJ)
+$(NAME) : $(OBJ) $(PRINTF_LIB)
+	@ar rcs $(NAME) $(OBJ) $(PRINTF_LIB)
 	@echo _🐸🐸🐸_default_Arrive_$(NAME)__
 
 # Bonus Rule
-bonus : $(OBJ) $(BONUS_OBJ)
-	@ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+bonus : $(OBJ) $(BONUS_OBJ) $(PRINTF_LIB)
+	@ar rcs $(NAME) $(OBJ) $(BONUS_OBJ) $(PRINTF_LIB)
 	@echo _💎💎💎_bonus_Arrive__
 
+# Printf
+$(PRINTF_LIB):
+	$(MAKE) -C $(PRINTF_DIR)
 
 # *************************** Clean ****************************************** #
 
 clean :
 	rm -f $(OBJ) $(BONUS_OBJ)
+	$(MAKE) -C $(PRINTF_DIR) clean
+
 fclean : clean
 	rm -f $(NAME)
+	$(MAKE) -C $(PRINTF_DIR) fclean
+
 re : fclean all
 
 

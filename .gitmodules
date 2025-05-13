@@ -1,0 +1,3 @@
+[submodule "printf_ft"]
+	path = printf_ft
+	url = git@github.com:RoboFB/printf_ft.git
