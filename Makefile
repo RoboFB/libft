@@ -6,7 +6,7 @@
 #    By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 10:21:00 by rgohrig           #+#    #+#              #
-#    Updated: 2025/06/25 12:22:05 by rgohrig          ###   ########.fr        #
+#    Updated: 2025/06/25 12:34:19 by rgohrig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,19 +39,21 @@ $(DIR_OBJ):
 	mkdir $(DIR_OBJ)
 
 $(DIR_OBJ)/%.o : $(DIR_SRC)/%.c | $(DIR_OBJ)
-	$(CC) $(CFLAGS) $(HEADERS) -o $@ -c $<
-	echo 🐸 $@
+	@$(CC) $(CFLAGS) $(HEADERS) -o $@ -c $<
+	@echo 🐸 $@
 
 # arrive
 $(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-	echo 📘📗📙 $(NAME)
+	@ar rcs $(NAME) $(OBJ)
+	@echo 📘📗📙 $(NAME)
 
 clean :
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@echo 🧹 cleaned all objects
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo 🧹🧹🧹 cleaned $(NAME)
 
 re : fclean all
 
