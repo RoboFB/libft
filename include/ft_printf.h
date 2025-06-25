@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:57 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/04/04 17:29:33 by rgohrig          ###   ########.fr       */
+/*   Updated: 2025/06/25 11:28:06 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdarg.h>
+
+// printf functions
 
 int			ft_printf(const char *main_str, ...);
 int			ft_prf_putchar(char one_char);
