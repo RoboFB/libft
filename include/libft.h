@@ -6,7 +6,7 @@
 /*   By: rgohrig <rgohrig@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:57 by rgohrig           #+#    #+#             */
-/*   Updated: 2025/06/25 11:28:02 by rgohrig          ###   ########.fr       */
+/*   Updated: 2026/02/13 20:23:54 by rgohrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 typedef struct s_list
 {
@@ -46,6 +47,7 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int			ft_atoi(const char *nptr);
 char		*ft_itoa(int n);
+const char	*ft_itoa_static(int n);
 
 // string functions
 
@@ -59,6 +61,8 @@ char		*ft_strdup(const char *s);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin_3(char const *s1, char const *s2, char const *s3);
+char		*ft_strjoin_4(char const *s1, char const *s2, char const *s3, char const *s4);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -67,8 +71,8 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 // print functions
 
 void		ft_putchar_fd(char c, int fd);
-void		ft_putstr_fd(char *s, int fd);
-void		ft_putendl_fd(char *s, int fd);
+void		ft_putstr_fd(const char *s, int fd);
+void		ft_putendl_fd(const char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
 // list functions
